@@ -3,8 +3,6 @@ I couldn't find any utility to generate encrypted password to put into my [FreeR
 
 So, I wrote a small utility to generate encrypted hashes for use in the `authorize` configuration file.
 
-I am happy with the SHA hashes, but feel free to implement more and send me a merge request if you feel so inclined.
-
 ```
 usage: pwgen_rad.py [-h] [--hash HASH] password salt
 
@@ -20,3 +18,6 @@ optional arguments:
 ```
 
 Lookup `man 5 rlm_pap` to see how to write the configuration attributes (i.e. `SSHA1-Password:`)
+
+# Contribute
+I am happy with the SHA hashes, but feel free to implement more and send me a pull request if you feel so inclined.
