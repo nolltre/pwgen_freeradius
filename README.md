@@ -4,7 +4,7 @@ I couldn't find any utility to generate encrypted password to put into my [FreeR
 So, I wrote a small utility to generate encrypted hashes for use in the `authorize` configuration file.
 
 ```
-usage: pwgen_rad.py [-h] [--hash HASH] password salt
+usage: pwgen_freeradius.py [-h] [--hash HASH] password salt
 
 Generates hashes for use in FreeRADIUS configuration files (default: SHA1)
 
