@@ -7,7 +7,7 @@ def generate_password(password, salt, func):
     s = bytearray(salt, 'utf-8')
     return base64.b64encode(func(p + s).digest() + s).decode('utf-8')
 
-def main(argv):
+def main():
     hashfunc = {
             'sha1': h.sha1,
             'sha224': h.sha224,
@@ -20,7 +20,7 @@ def main(argv):
     parser.add_argument('salt')
     parser.add_argument('--hash', default='sha1', help='one of: ' + ', '.join(list(hashfunc.keys())))
 
-    c = parser.parse_args(argv[1:])
+    c = parser.parse_args()
 
     try:
         func = hashfunc[c.hash]
@@ -31,4 +31,4 @@ def main(argv):
     print(generate_password(c.password, c.salt, func))
 
 if __name__ == '__main__':
-    main(sys.argv)
+    main()
